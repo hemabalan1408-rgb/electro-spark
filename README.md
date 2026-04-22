@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ⚡ ELECTRO SPARK — AI Legal Assistant v2.0
 ### Complete Product | Venture Code: VEN-ELEC-5613
 
@@ -134,3 +135,7 @@ Electro Spark provides general legal information only — not professional legal
 ---
 
 *Built for Wadhwani Ignite Bootcamp — Niralthiruvizha 3.0, Coimbatore*
+=======
+# electro-spark
+AI Legal Assistant - VEN-ELEC-5613
+>>>>>>> 346f00b68be1aca85ad37cbd43e11e1c97903a51
