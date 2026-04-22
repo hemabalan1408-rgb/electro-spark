@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Electro Spark — AI Legal Assistant. Free legal help in Tamil, Hindi, Telugu, Kannada, Malayalam and English."/>
+<meta name="theme-color" content="#0d1117"/>
+<title>Electro Spark — AI Legal Assistant</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════════════════════
+   ELECTRO SPARK — Production Design System v4.0
+   Theme: Legal authority × Digital accessibility
+   Venture: VEN-ELEC-5613 | SRIT Coimbatore
+   ══════════════════════════════════════════════════════ */
+:root{
+  --bg:#0d1117;--panel:#161b22;--card:#21262d;--card2:#2d333b;--card3:#373e47;
+  --jade:#3fb950;--jade-d:rgba(63,185,80,.12);--jade-g:0 0 28px rgba(63,185,80,.2);
+  --sky:#58a6ff;--sky-d:rgba(88,166,255,.1);
+  --gold:#e3b341;--gold-d:rgba(227,179,65,.12);
+  --rose:#f85149;--rose-d:rgba(248,81,73,.1);
+  --violet:#bc8cff;--violet-d:rgba(188,140,255,.1);
+  --text:#e6edf3;--text2:#8b949e;--text3:#484f58;
+  --border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.04);
+  --r:8px;--r2:12px;--r3:18px;--r4:24px;
+  --ff:'DM Sans',system-ui,sans-serif;
+  --ffd:'DM Serif Display',Georgia,serif;
+  --fft:'Noto Sans Tamil','DM Sans',sans-serif;
+  --shadow:0 8px 32px rgba(0,0,0,.4);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--ff);overflow:hidden}
+button{cursor:pointer;font-family:var(--ff)}
+a{color:var(--sky);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ══ LAYOUT ════════════════════════════════════════ */
+.app{display:flex;height:100vh;overflow:hidden}
+
+/* ══ SIDEBAR ═══════════════════════════════════════ */
+.sb{width:248px;flex-shrink:0;background:var(--panel);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;transition:width .3s}
+.sb.collapsed{width:0;overflow:hidden}
+
+.sb-head{padding:16px 14px 12px;border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:10px}
+.sb-ico{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--jade),var(--sky));display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:var(--jade-g);flex-shrink:0}
+.sb-txt h1{font-family:var(--ffd);font-size:14px;color:var(--text);line-height:1.2}
+.sb-txt p{font-size:9px;color:var(--jade);text-transform:uppercase;letter-spacing:.5px;margin-top:1px}
+
+.nav{padding:8px 8px 2px}
+.nlbl{font-size:9.5px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;padding:0 8px;margin-bottom:3px;margin-top:6px}
+.nb{width:100%;display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:var(--r);border:none;background:transparent;color:var(--text2);font-size:12.5px;text-align:left;transition:all .15s;margin-bottom:1px}
+.nb:hover{background:var(--card);color:var(--text)}
+.nb.active{background:var(--jade-d);color:var(--jade);font-weight:500}
+.nb .ni{font-size:13px;width:16px;text-align:center;flex-shrink:0}
+
+.topics{padding:2px 8px;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:1px}
+.topics::-webkit-scrollbar{width:2px}
+.topics::-webkit-scrollbar-thumb{background:var(--border)}
+.tc{display:flex;align-items:center;gap:7px;padding:6px 9px;border-radius:var(--r);border:none;background:transparent;color:var(--text2);font-size:11.5px;text-align:left;transition:all .15s;width:100%}
+.tc:hover{background:var(--card);color:var(--text)}
+
+.em-mini{margin:8px;padding:10px 12px;background:rgba(248,81,73,.07);border:1px solid rgba(248,81,73,.18);border-radius:var(--r2)}
+.em-mini h4{font-size:9.5px;color:var(--rose);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.emr{display:flex;justify-content:space-between;align-items:center;padding:2px 0}
+.emn{font-size:10px;color:var(--text2)}
+.emnum{font-size:10.5px;font-weight:700;color:var(--rose);background:rgba(248,81,73,.1);padding:1px 6px;border-radius:10px;font-family:monospace}
+
+.sb-foot{padding:10px 12px;border-top:1px solid var(--border2);font-size:9px;color:var(--text3);text-align:center;line-height:1.7}
+
+/* ══ MAIN ═══════════════════════════════════════════ */
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+
+/* Topbar */
+.tb{padding:10px 16px;background:var(--panel);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;flex-shrink:0}
+.tb-toggle{width:30px;height:30px;border-radius:var(--r);border:1px solid var(--border);background:transparent;color:var(--text2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:all .15s}
+.tb-toggle:hover{background:var(--card);color:var(--text)}
+.tb-title{font-size:13px;font-weight:600;color:var(--text);white-space:nowrap}
+.plan-pill{font-size:9.5px;padding:2px 8px;border-radius:10px;font-weight:700;letter-spacing:.3px;flex-shrink:0}
+.plan-pill.free{background:var(--jade-d);color:var(--jade);border:1px solid rgba(63,185,80,.2)}
+.plan-pill.premium{background:var(--gold-d);color:var(--gold);border:1px solid rgba(227,179,65,.2)}
+.plan-pill.ngo{background:var(--violet-d);color:var(--violet);border:1px solid rgba(188,140,255,.2)}
+.upgrade-btn{padding:4px 10px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text2);font-size:10.5px;transition:all .15s;white-space:nowrap;flex-shrink:0}
+.upgrade-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+.lang-bar{display:flex;gap:2px;margin-left:auto;background:var(--card);border-radius:14px;padding:2px;flex-shrink:0}
+.lp{padding:3px 9px;border-radius:12px;border:none;background:transparent;color:var(--text2);font-size:10.5px;transition:all .15s;white-space:nowrap}
+.lp:hover{color:var(--text)}
+.lp.active{background:var(--jade);color:#000;font-weight:600}
+
+.online-dot{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--jade);background:var(--jade-d);padding:3px 8px;border-radius:10px;flex-shrink:0}
+.pulse{width:5px;height:5px;border-radius:50%;background:var(--jade);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Quota bar */
+.qbar{padding:6px 16px;background:rgba(227,179,65,.05);border-bottom:1px solid rgba(227,179,65,.1);display:flex;align-items:center;gap:10px;font-size:10.5px;color:var(--gold);flex-shrink:0}
+.qbar.hidden{display:none}
+.qb-label{white-space:nowrap;flex-shrink:0}
+.qb-track{flex:1;height:3px;background:var(--card2);border-radius:2px;overflow:hidden;min-width:40px}
+.qb-fill{height:100%;border-radius:2px;transition:width .5s,background .5s}
+.qb-upgrade{margin-left:auto;color:var(--gold);font-size:10px;white-space:nowrap;flex-shrink:0}
+.qb-upgrade:hover{text-decoration:underline}
+
+/* ══ PAGES ══════════════════════════════════════════ */
+.page{display:none;flex:1;flex-direction:column;overflow:hidden}
+.page.active{display:flex}
+
+/* ══ CHAT PAGE ══════════════════════════════════════ */
+.chat-body{flex:1;overflow-y:auto;padding:18px 22px;display:flex;flex-direction:column;gap:12px}
+.chat-body::-webkit-scrollbar{width:3px}
+.chat-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+/* Hero */
+.hero{text-align:center;padding:24px 16px 14px;animation:fadeup .5s ease}
+@keyframes fadeup{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.hero-badge{display:inline-flex;align-items:center;gap:5px;background:var(--jade-d);border:1px solid rgba(63,185,80,.2);color:var(--jade);font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;padding:4px 12px;border-radius:14px;margin-bottom:12px}
+.hero h2{font-family:var(--ffd);font-size:24px;color:var(--text);line-height:1.3;margin-bottom:7px}
+.hero p{font-size:12px;color:var(--text2);line-height:1.7;max-width:380px;margin:0 auto 18px}
+
+/* How it works */
+.how{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:16px}
+.hw{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:10px 6px;text-align:center;position:relative}
+.hw::after{content:'›';position:absolute;right:-5px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;z-index:1}
+.hw:last-child::after{display:none}
+.hw-n{width:20px;height:20px;border-radius:50%;background:var(--jade-d);color:var(--jade);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 5px}
+.hw-i{font-size:16px;margin-bottom:3px}
+.hw-t{font-size:9.5px;color:var(--text2);line-height:1.4}
+
+/* Quick grid */
+.qg{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.qc{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:10px;text-align:left;border:none;width:100%;transition:all .2s}
+.qc:hover{background:var(--jade-d);border:1px solid rgba(63,185,80,.3);transform:translateY(-1px)}
+.qc-i{font-size:16px;margin-bottom:4px}
+.qc-t{font-size:11px;font-weight:600;color:var(--text);margin-bottom:1px}
+.qc-s{font-size:9.5px;color:var(--text2)}
+
+/* Messages */
+.mrow{display:flex;flex-direction:column;max-width:80%;animation:rise .22s ease}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.mrow.user{align-self:flex-end;align-items:flex-end}
+.mrow.bot{align-self:flex-start;align-items:flex-start}
+.msender{font-size:9px;color:var(--text3);margin-bottom:3px;padding:0 4px;display:flex;align-items:center;gap:4px}
+.dot-j{width:5px;height:5px;border-radius:50%;background:var(--jade)}
+.bub{padding:10px 14px;border-radius:12px;font-size:12.5px;line-height:1.7}
+.bub.user{background:linear-gradient(135deg,rgba(63,185,80,.13),rgba(88,166,255,.08));border:1px solid rgba(63,185,80,.18);border-bottom-right-radius:3px;color:#cae8cb}
+.bub.bot{background:var(--card);border:1px solid var(--border);border-bottom-left-radius:3px;color:var(--text)}
+.bub b{color:var(--jade);font-weight:600}
+.mtime{font-size:9px;color:var(--text3);margin-top:2px;padding:0 4px;display:flex;align-items:center;gap:4px}
+.vbadge{font-size:8.5px;background:rgba(88,166,255,.12);color:var(--sky);padding:1px 5px;border-radius:8px}
+
+/* Typing */
+.typing-ind{display:flex;gap:4px;align-items:center;padding:2px 0}
+.typing-ind span{width:5px;height:5px;border-radius:50%;background:var(--jade);animation:tb 1.2s infinite}
+.typing-ind span:nth-child(2){animation-delay:.2s}
+.typing-ind span:nth-child(3){animation-delay:.4s}
+@keyframes tb{0%,80%,100%{transform:translateY(0);opacity:.3}40%{transform:translateY(-5px);opacity:1}}
+
+/* Input */
+.inp-area{padding:10px 16px;background:var(--panel);border-top:1px solid var(--border);display:flex;gap:8px;align-items:flex-end;flex-shrink:0}
+.iw{flex:1;display:flex;align-items:flex-end;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:8px 12px;transition:border-color .2s,box-shadow .2s}
+.iw:focus-within{border-color:rgba(63,185,80,.4);box-shadow:0 0 0 3px rgba(63,185,80,.05)}
+#inp{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:var(--ff);font-size:12.5px;resize:none;max-height:100px;line-height:1.5;min-height:18px}
+#inp::placeholder{color:var(--text3)}
+.vbtn{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--text2);display:flex;align-items:center;justify-content:center;font-size:12px;transition:all .2s;flex-shrink:0}
+.vbtn:hover,.vbtn.rec{background:rgba(248,81,73,.12);border-color:var(--rose);color:var(--rose)}
+.vbtn.rec{animation:rec-pulse 1s infinite}
+@keyframes rec-pulse{0%,100%{box-shadow:0 0 0 0 rgba(248,81,73,.4)}50%{box-shadow:0 0 0 5px rgba(248,81,73,0)}}
+.sbtn{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--jade),var(--sky));border:none;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;box-shadow:0 4px 12px rgba(63,185,80,.25)}
+.sbtn:hover{transform:scale(1.08);box-shadow:0 6px 18px rgba(63,185,80,.35)}
+.sbtn:disabled{opacity:.35;cursor:not-allowed;transform:none;box-shadow:none}
+.sbtn svg{width:14px;height:14px;fill:#000}
+.inp-hint{font-size:9.5px;color:var(--text3);text-align:center;padding:4px 0 6px;background:var(--panel)}
+
+/* ══ PERSONA PAGE ════════════════════════════════════ */
+.inner-page{overflow-y:auto;padding:24px 32px;flex:1}
+.inner-page::-webkit-scrollbar{width:3px}
+.inner-page::-webkit-scrollbar-thumb{background:var(--border)}
+.pg-h{font-family:var(--ffd);font-size:20px;color:var(--text);margin-bottom:4px}
+.pg-s{font-size:12px;color:var(--text2);margin-bottom:20px;line-height:1.6}
+
+.persona-layout{display:grid;grid-template-columns:220px 1fr;gap:16px;margin-bottom:18px}
+.pcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r3);padding:18px;text-align:center}
+.pav{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--jade),var(--sky));display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 10px;box-shadow:var(--jade-g)}
+.pname{font-family:var(--ffd);font-size:16px;color:var(--text);margin-bottom:3px}
+.prole{font-size:11px;color:var(--text2);margin-bottom:12px}
+.ptags{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
+.ptag{font-size:9.5px;padding:2px 8px;border-radius:10px;background:var(--card2);color:var(--text2);border:1px solid var(--border)}
+.ptag.j{background:var(--jade-d);color:var(--jade);border-color:rgba(63,185,80,.2)}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pf{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:10px 12px}
+.pf-l{font-size:9.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.pf-v{font-size:12.5px;color:var(--text);font-weight:500}
+
+.jtbd-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r3);padding:16px;margin-bottom:14px}
+.jtbd-box h3{font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px}
+.jtbd-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.jcol{background:var(--bg);border-radius:var(--r2);padding:10px}
+.jcol h4{font-size:10px;color:var(--jade);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.jcol p{font-size:11.5px;color:var(--text2);line-height:1.6}
+
+.alt-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.alt-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:13px}
+.alt-card h4{font-size:11px;font-weight:600;color:var(--text);margin-bottom:7px}
+.ali{font-size:11.5px;color:var(--text2);padding:3px 0;border-bottom:1px solid var(--border2)}
+.ali:last-child{border:none}
+.seg2{background:var(--sky-d);border:1px solid rgba(88,166,255,.15);border-radius:var(--r2);padding:12px 14px}
+.seg2 h4{font-size:11px;color:var(--sky);margin-bottom:5px}
+.seg2 p{font-size:12px;color:var(--text2);line-height:1.6}
+
+/* ══ FINANCIALS PAGE ═════════════════════════════════ */
+.fin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.fcrd{background:var(--card);border:1px solid var(--border);border-radius:var(--r3);padding:16px;position:relative;overflow:hidden}
+.fcrd::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.fcrd.y1::before{background:var(--rose)}
+.fcrd.y2::before{background:var(--gold)}
+.fcrd.y3::before{background:var(--jade)}
+.fy{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--text2);margin-bottom:10px}
+.fr{display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid var(--border2)}
+.fr:last-of-type{border:none;padding-top:6px}
+.fl{font-size:11px;color:var(--text2)}
+.fv{font-size:12.5px;font-weight:600}
+.fv.r{color:var(--jade)}.fv.e{color:var(--rose)}
+.fv.p{color:var(--jade);font-size:15px}.fv.n{color:var(--rose);font-size:15px}
+.fphase{margin-top:6px;font-size:9.5px;color:var(--text3)}
+
+/* Chart */
+.chart-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r3);padding:18px;margin-bottom:18px}
+.chart-box h3{font-size:13px;font-weight:600;color:var(--text);margin-bottom:14px}
+.bars{display:flex;align-items:flex-end;gap:10px;height:130px;padding-bottom:28px;position:relative}
+.bars::after{content:'';position:absolute;bottom:28px;left:0;right:0;height:1px;background:var(--border)}
+.bg{flex:1;display:flex;gap:3px;align-items:flex-end;position:relative}
+.bg::after{content:attr(data-y);position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:9.5px;color:var(--text3);white-space:nowrap}
+.bar{flex:1;border-radius:3px 3px 0 0;min-height:2px;transition:height .5s .1s;position:relative}
+.bar:hover::after{content:attr(data-v);position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--text);background:var(--card2);padding:2px 5px;border-radius:4px;white-space:nowrap;z-index:2}
+.bar.r{background:var(--jade);opacity:.8}
+.bar.e{background:var(--rose);opacity:.7}
+.bar.p{background:var(--sky);opacity:.8}
+.legend{display:flex;gap:12px;margin-top:24px}
+.leg{display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--text2)}
+.ldot{width:8px;height:8px;border-radius:2px}
+
+/* Plans */
+.plans-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.plcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r3);padding:16px;position:relative}
+.plcard.best{border-color:var(--jade);box-shadow:0 0 20px rgba(63,185,80,.1)}
+.best-badge{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--jade);color:#000;font-size:8.5px;font-weight:700;padding:2px 9px;border-radius:10px;text-transform:uppercase;white-space:nowrap}
+.pl-name{font-family:var(--ffd);font-size:15px;color:var(--text);margin-bottom:3px}
+.pl-price{font-size:20px;font-weight:700;margin-bottom:10px}
+.pl-price.free-c{color:var(--jade)}
+.pl-price.prem-c{color:var(--gold)}
+.pl-price.ngo-c{color:var(--violet)}
+.pl-price span{font-size:11px;font-weight:400;color:var(--text2)}
+.plfeat{font-size:11px;color:var(--text2);padding:3px 0;border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:5px}
+.plfeat:last-child{border:none}
+.plfeat::before{content:'✓';color:var(--jade);font-weight:700;font-size:10px}
+.subscribe-btn{width:100%;margin-top:12px;padding:8px;border-radius:var(--r);border:1px solid var(--border);background:transparent;color:var(--text2);font-size:11.5px;font-weight:600;transition:all .2s}
+.subscribe-btn:hover{border-color:var(--jade);color:var(--jade)}
+.subscribe-btn.active-plan{background:var(--jade-d);color:var(--jade);border-color:rgba(63,185,80,.3);cursor:default}
+
+/* ══ ABOUT PAGE ══════════════════════════════════════ */
+.ab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.abcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r3);padding:16px}
+.abcard .ai{font-size:22px;margin-bottom:8px}
+.abcard h3{font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:4px}
+.abcard p{font-size:11.5px;color:var(--text2);line-height:1.6}
+.feat-list{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.fi{display:flex;align-items:flex-start;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:11px 13px}
+.fi-ic{width:28px;height:28px;border-radius:7px;background:var(--jade-d);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.fi h4{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px}
+.fi p{font-size:11px;color:var(--text2);line-height:1.5}
+.comp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
+.comp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:12px}
+.comp-card h4{font-size:11px;font-weight:600;color:var(--text);margin-bottom:7px}
+.ci{font-size:11px;color:var(--text2);padding:2.5px 0;border-bottom:1px solid var(--border2)}
+.ci:last-child{border:none}
+.trend-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.tc-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:13px}
+.tc-card h4{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:9px}
+.tc-card.fav h4{color:var(--jade)}
+.tc-card.unfav h4{color:var(--rose)}
+.trow{display:flex;gap:7px;margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid var(--border2)}
+.trow:last-child{border:none;margin:0;padding:0}
+.tarea{font-size:9.5px;font-weight:600;padding:2px 6px;border-radius:8px;flex-shrink:0;height:fit-content}
+.tc-card.fav .tarea{background:var(--jade-d);color:var(--jade)}
+.tc-card.unfav .tarea{background:var(--rose-d);color:var(--rose)}
+.tdesc{font-size:11px;color:var(--text2);line-height:1.5}
+.disc{background:var(--gold-d);border:1px solid rgba(227,179,65,.18);border-radius:var(--r2);padding:12px 14px;font-size:11.5px;color:var(--text2);line-height:1.7}
+.disc strong{color:var(--gold)}
+
+/* ══ EMERGENCY PAGE ══════════════════════════════════ */
+.em-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ec{background:var(--card);border:1px solid rgba(248,81,73,.14);border-radius:var(--r3);padding:14px;text-align:center;transition:all .2s}
+.ec:hover{border-color:var(--rose);background:rgba(248,81,73,.05);transform:translateY(-2px)}
+.ec-i{font-size:22px;margin-bottom:7px}
+.ec h3{font-size:11.5px;font-weight:600;color:var(--text);margin-bottom:4px}
+.ec-num{font-size:17px;font-weight:700;color:var(--rose);font-family:var(--ffd)}
+.ec p{font-size:9.5px;color:var(--text2);margin-top:4px;line-height:1.4}
+
+/* ══ MODAL ═══════════════════════════════════════════ */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;padding:16px}
+.overlay.show{opacity:1;pointer-events:all}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:var(--r3);padding:22px;width:100%;max-width:380px;box-shadow:var(--shadow)}
+.modal h3{font-family:var(--ffd);font-size:16px;color:var(--text);margin-bottom:4px}
+.modal p{font-size:11.5px;color:var(--text2);margin-bottom:14px;line-height:1.6}
+.modal-btns{display:flex;gap:7px;flex-wrap:wrap}
+.mbtn{flex:1;padding:9px 8px;border-radius:var(--r);border:1px solid var(--border);background:var(--card);color:var(--text);font-size:11.5px;font-weight:600;transition:all .15s;min-width:80px;text-align:center}
+.mbtn:hover{border-color:var(--jade);color:var(--jade)}
+.mbtn.go{background:var(--jade);color:#000;border-color:var(--jade)}
+.mbtn.go:hover{background:#2ea043}
+
+/* ══ TOAST ═══════════════════════════════════════════ */
+.toast{position:fixed;bottom:18px;right:18px;background:var(--card2);border:1px solid var(--border);color:var(--text);font-size:12px;padding:8px 14px;border-radius:var(--r2);opacity:0;transition:all .3s;pointer-events:none;z-index:300;box-shadow:var(--shadow)}
+.toast.show{opacity:1;transform:translateY(-4px)}
+
+/* ══ RESPONSIVE ══════════════════════════════════════ */
+@media(max-width:768px){
+  .sb{display:none}
+  .how{grid-template-columns:repeat(3,1fr)}
+  .how .hw:nth-child(4),.how .hw:nth-child(5){display:none}
+  .qg{grid-template-columns:repeat(2,1fr)}
+  .persona-layout,.jtbd-row,.alt-row,.fin-grid,.plans-row,.ab-grid,.comp-grid,.trend-grid,.em-grid{grid-template-columns:1fr}
+  .pgrid{grid-template-columns:1fr}
+  .chat-body,.inner-page{padding:14px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- ══════════ SIDEBAR ══════════ -->
+<aside class="sb" id="sidebar">
+  <div class="sb-head">
+    <div class="sb-ico">⚖️</div>
+    <div class="sb-txt"><h1>Electro Spark</h1><p>Legal Assistant</p></div>
+  </div>
+
+  <div class="nav">
+    <div class="nlbl">Navigation</div>
+    <button class="nb active" onclick="goPage('chat',this)"><span class="ni">💬</span>Legal Chat</button>
+    <button class="nb" onclick="goPage('persona',this)"><span class="ni">👤</span>Customer Persona</button>
+    <button class="nb" onclick="goPage('financials',this)"><span class="ni">📊</span>Financials</button>
+    <button class="nb" onclick="goPage('about',this)"><span class="ni">ℹ️</span>About & Analysis</button>
+    <button class="nb" onclick="goPage('emergency',this)"><span class="ni">🚨</span>Emergency Contacts</button>
+    <div class="nlbl" style="margin-top:10px">Legal Topics</div>
+  </div>
+
+  <div class="topics" id="topicsEl"></div>
+
+  <div class="em-mini">
+    <h4>🚨 Quick Helplines</h4>
+    <div class="emr"><span class="emn">Police</span><span class="emnum" onclick="copyNum('100')">100</span></div>
+    <div class="emr"><span class="emn">Women</span><span class="emnum" onclick="copyNum('181')">181</span></div>
+    <div class="emr"><span class="emn">Legal Aid</span><span class="emnum" onclick="copyNum('1516')">1516</span></div>
+    <div class="emr"><span class="emn">Cyber Crime</span><span class="emnum" onclick="copyNum('1930')">1930</span></div>
+    <div class="emr"><span class="emn">Child</span><span class="emnum" onclick="copyNum('1098')">1098</span></div>
+  </div>
+
+  <div class="sb-foot">
+    ⚡ Electro Spark v4.0<br>
+    VEN-ELEC-5613<br>
+    Niralthiruvizha 3.0 • SRIT Coimbatore
+  </div>
+</aside>
+
+<!-- ══════════ MAIN ══════════ -->
+<main class="main">
+
+  <!-- Topbar -->
+  <div class="tb">
+    <button class="tb-toggle" onclick="toggleSidebar()" title="Toggle sidebar">☰</button>
+    <span class="tb-title" id="pgTitle">Legal Chat</span>
+    <span class="plan-pill free" id="planPill">FREE</span>
+    <button class="upgrade-btn" onclick="showModal('upgrade')">⬆ Upgrade</button>
+    <div class="lang-bar">
+      <button class="lp active" data-lang="en" onclick="setLang(this)">EN</button>
+      <button class="lp" data-lang="ta" onclick="setLang(this)">தமிழ்</button>
+      <button class="lp" data-lang="hi" onclick="setLang(this)">हिं</button>
+      <button class="lp" data-lang="te" onclick="setLang(this)">తె</button>
+      <button class="lp" data-lang="kn" onclick="setLang(this)">ಕ</button>
+      <button class="lp" data-lang="ml" onclick="setLang(this)">മ</button>
+    </div>
+    <div class="online-dot"><div class="pulse"></div>Online</div>
+  </div>
+
+  <!-- Quota bar -->
+  <div class="qbar" id="qbar">
+    <span class="qb-label" id="qbarTxt">20 free queries/day</span>
+    <div class="qb-track"><div class="qb-fill" id="qbarFill" style="width:100%"></div></div>
+    <a class="qb-upgrade" onclick="showModal('upgrade')">Upgrade for unlimited →</a>
+  </div>
+
+  <!-- ── CHAT PAGE ── -->
+  <div class="page active" id="page-chat">
+    <div class="chat-body" id="chatBody">
+      <div class="hero" id="heroEl">
+        <div class="hero-badge">⚡ AI-Powered · Free · Multilingual · Voice-Enabled</div>
+        <h2>Your Legal Rights,<br/>In Your Language</h2>
+        <p>Ask any legal question in Tamil, Hindi, Telugu, Kannada, Malayalam or English. Get instant, clear answers — completely free.</p>
+
+        <div class="how">
+          <div class="hw"><div class="hw-n">1</div><div class="hw-i">📱</div><div class="hw-t">Ask via app or voice</div></div>
+          <div class="hw"><div class="hw-n">2</div><div class="hw-i">🧠</div><div class="hw-t">AI processes with NLP</div></div>
+          <div class="hw"><div class="hw-n">3</div><div class="hw-i">📚</div><div class="hw-t">Retrieves legal info</div></div>
+          <div class="hw"><div class="hw-n">4</div><div class="hw-i">🌐</div><div class="hw-t">Translated to your language</div></div>
+          <div class="hw"><div class="hw-n">5</div><div class="hw-i">✅</div><div class="hw-t">Answer + next steps</div></div>
+        </div>
+
+        <div class="qg" id="quickGrid"></div>
+      </div>
+    </div>
+
+    <div class="inp-area">
+      <div class="iw">
+        <textarea id="inp" rows="1"
+          placeholder="Ask a legal question... / சட்ட கேள்வி கேளுங்கள்..."
+          onkeydown="handleKey(event)" oninput="resize(this)"></textarea>
+        <button class="vbtn" id="vbtn" onclick="toggleVoice()" title="Voice Input (Chrome/Edge)">🎤</button>
+      </div>
+      <button class="sbtn" id="sbtn" onclick="sendMsg()">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+    <div class="inp-hint">Enter to send · Shift+Enter for new line · 🎤 voice input (Chrome/Edge) · Free legal aid: 1516</div>
+  </div>
+
+  <!-- ── PERSONA PAGE ── -->
+  <div class="page" id="page-persona">
+    <div class="inner-page">
+      <h2 class="pg-h">Customer Persona</h2>
+      <p class="pg-s">Primary segment: Low-income individuals aged 25–55 seeking basic legal assistance in regional languages (B2C)</p>
+
+      <div class="persona-layout">
+        <div class="pcard">
+          <div class="pav">👨</div>
+          <div class="pname">Arun Kumar</div>
+          <div class="prole">Age 28 · Small Town, Tamil Nadu</div>
+          <div class="ptags">
+            <span class="ptag j">Primary Persona</span>
+            <span class="ptag">B2C</span>
+            <span class="ptag">Medium Tech</span>
+          </div>
+        </div>
+        <div class="pgrid">
+          <div class="pf"><div class="pf-l">Education</div><div class="pf-v">College Graduate</div></div>
+          <div class="pf"><div class="pf-l">Gender</div><div class="pf-v">Male</div></div>
+          <div class="pf"><div class="pf-l">Occupation</div><div class="pf-v">Private Company Employee</div></div>
+          <div class="pf"><div class="pf-l">Interests</div><div class="pf-v">Gaming & Entertainment</div></div>
+          <div class="pf"><div class="pf-l">Info Source</div><div class="pf-v">Social Media</div></div>
+          <div class="pf"><div class="pf-l">Shopping</div><div class="pf-v">Hybrid (Online + Offline)</div></div>
+          <div class="pf"><div class="pf-l">Fav Platform</div><div class="pf-v">📺 YouTube</div></div>
+          <div class="pf"><div class="pf-l">Offline Spot</div><div class="pf-v">🛍️ Malls</div></div>
+        </div>
+      </div>
+
+      <div class="jtbd-box">
+        <h3>🎯 Jobs-to-be-Done</h3>
+        <div class="jtbd-row">
+          <div class="jcol"><h4>⚙️ Functional</h4><p>Understand legal rights, file complaints, access government schemes, resolve land/labor disputes without expensive lawyers</p></div>
+          <div class="jcol"><h4>❤️ Emotional</h4><p>Feel confident about legal rights, reduce fear of legal situations, feel empowered and not helpless</p></div>
+          <div class="jcol"><h4>🤝 Social</h4><p>Gain respect in community, help family with legal issues, stand up against injustice confidently</p></div>
+        </div>
+      </div>
+
+      <div class="alt-row">
+        <div class="alt-card">
+          <h4>🔄 Current Alternatives</h4>
+          <div class="ali">Asks village elders for advice</div>
+          <div class="ali">Consults paid lawyers</div>
+          <div class="ali">Visits government offices</div>
+          <div class="ali">Seeks help from NGOs</div>
+          <div class="ali">Approaches local politicians</div>
+        </div>
+        <div class="alt-card">
+          <h4>❌ Gaps in Current Alternatives</h4>
+          <div class="ali">Village elders give wrong advice</div>
+          <div class="ali">Lawyers are expensive and far away</div>
+          <div class="ali">Government offices require multiple visits</div>
+          <div class="ali">NGOs have limited reach</div>
+          <div class="ali">All information is in English only</div>
+        </div>
+      </div>
+
+      <div class="seg2">
+        <h4>👥 Secondary Segment (B2B)</h4>
+        <p>NGOs and Legal Aid Organizations providing free legal services to underprivileged communities — <strong>₹999/month</strong> for multi-user API access, analytics dashboard, and custom legal knowledge base.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FINANCIALS PAGE ── -->
+  <div class="page" id="page-financials">
+    <div class="inner-page">
+      <h2 class="pg-h">Financial Projections</h2>
+      <p class="pg-s">Business Model: <strong style="color:var(--jade)">Subscription</strong> · Currency: INR · 3-Year Back-of-Envelope Projection (Wadhwani Ignite — Slide 18)</p>
+
+      <div class="fin-grid">
+        <div class="fcrd y1">
+          <div class="fy">📅 Year 1 — Setup Phase</div>
+          <div class="fr"><span class="fl">Revenues</span><span class="fv r">₹5,00,000</span></div>
+          <div class="fr"><span class="fl">Total Expenses</span><span class="fv e">₹12,00,000</span></div>
+          <div class="fr"><span class="fl">Net Profit</span><span class="fv n">−₹7,00,000</span></div>
+          <div class="fphase">Building user base · Setting up infrastructure</div>
+        </div>
+        <div class="fcrd y2">
+          <div class="fy">📅 Year 2 — Growth Phase</div>
+          <div class="fr"><span class="fl">Revenues</span><span class="fv r">₹15,00,000</span></div>
+          <div class="fr"><span class="fl">Total Expenses</span><span class="fv e">₹18,00,000</span></div>
+          <div class="fr"><span class="fl">Net Profit</span><span class="fv n">−₹3,00,000</span></div>
+          <div class="fphase">NGO partnerships · Premium subscribers</div>
+        </div>
+        <div class="fcrd y3">
+          <div class="fy">📅 Year 3 — Profitable 🎉</div>
+          <div class="fr"><span class="fl">Revenues</span><span class="fv r">₹35,00,000</span></div>
+          <div class="fr"><span class="fl">Total Expenses</span><span class="fv e">₹25,00,000</span></div>
+          <div class="fr"><span class="fl">Net Profit</span><span class="fv p">+₹10,00,000</span></div>
+          <div class="fphase" style="color:var(--jade)">Profitable · Scale to 5 new states</div>
+        </div>
+      </div>
+
+      <div class="chart-box">
+        <h3>📈 Revenue vs Expenses vs Profit (Lakhs ₹)</h3>
+        <div class="bars" id="chartBars"></div>
+        <div class="legend">
+          <div class="leg"><div class="ldot" style="background:var(--jade)"></div>Revenue</div>
+          <div class="leg"><div class="ldot" style="background:var(--rose)"></div>Expenses</div>
+          <div class="leg"><div class="ldot" style="background:var(--sky)"></div>Profit / Loss</div>
+        </div>
+      </div>
+
+      <h3 class="pg-h" style="font-size:17px;margin-bottom:5px">Subscription Plans</h3>
+      <p class="pg-s" style="margin-bottom:14px">Revenue model driving the financial projections above</p>
+      <div class="plans-row" id="plansRow"></div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT PAGE ── -->
+  <div class="page" id="page-about">
+    <div class="inner-page">
+      <h2 class="pg-h">About & Market Analysis</h2>
+      <p class="pg-s">Complete venture analysis — Electro Spark (VEN-ELEC-5613) · Niralthiruvizha 3.0 · SRIT Coimbatore</p>
+
+      <div class="ab-grid">
+        <div class="abcard"><div class="ai">🎯</div><h3>Problem</h3><p>People in rural India struggle to access and understand basic legal information due to language barriers and complex legal procedures. 70% of Indians lack legal aid access.</p></div>
+        <div class="abcard"><div class="ai">💡</div><h3>Solution</h3><p>AI-powered multilingual legal chatbot accessible via mobile app and WhatsApp, answering legal queries in regional Indian languages through text and voice input — free for all.</p></div>
+        <div class="abcard"><div class="ai">📊</div><h3>Market Size</h3><p>Indian Legal Tech Market: <strong>USD 1.7B (2023)</strong> growing at <strong>27.4% CAGR</strong> (2023–2030). Source: Inc42 2023, Fortune Business Insights 2024.</p></div>
+      </div>
+
+      <h3 class="pg-h" style="font-size:16px;margin-bottom:10px">✨ Key Features</h3>
+      <div class="feat-list">
+        <div class="fi"><div class="fi-ic">🌐</div><div><h4>10+ Regional Languages</h4><p>Tamil, Hindi, Telugu, Kannada, Malayalam, Marathi, Bengali, Gujarati + more. Auto Unicode-based language detection.</p></div></div>
+        <div class="fi"><div class="fi-ic">🎤</div><div><h4>Voice Input</h4><p>Voice-based queries using Web Speech API — critical for low-literacy rural users. Supports all major Indian regional languages in Chrome/Edge.</p></div></div>
+        <div class="fi"><div class="fi-ic">📱</div><div><h4>WhatsApp Integration (Backend)</h4><p>WhatsApp Business API ready — accessible on a platform 500M+ Indians already use daily. No app download needed.</p></div></div>
+        <div class="fi"><div class="fi-ic">📶</div><div><h4>Offline FAQ Mode</h4><p>Core legal Q&A works without internet using local JS database. Designed for rural areas with low connectivity.</p></div></div>
+        <div class="fi"><div class="fi-ic">💳</div><div><h4>Subscription Model</h4><p>Free tier (20 queries/day) → Premium (₹99/mo, unlimited) → NGO Plan (₹999/mo, multi-user API). Drives 3-year financial roadmap to profitability.</p></div></div>
+      </div>
+
+      <h3 class="pg-h" style="font-size:16px;margin-bottom:10px">🏆 Competitor Analysis</h3>
+      <div class="comp-grid">
+        <div class="comp-card"><h4>🇮🇳 Direct India</h4><div class="ci">NyaySetu</div><div class="ci">Vakeel.ai</div><div class="ci">LawRato</div><div class="ci">Nyaaya.org</div></div>
+        <div class="comp-card"><h4>🌍 Direct Global</h4><div class="ci">DoNotPay (USA)</div><div class="ci">Rocket Lawyer (USA)</div><div class="ci">LawDroid (USA)</div><div class="ci">Joshua AI (UK)</div></div>
+        <div class="comp-card"><h4>🇮🇳 Indirect India</h4><div class="ci">Legal aid NGOs</div><div class="ci">NALSA helpline</div><div class="ci">Paid lawyers</div><div class="ci">Law firm websites</div></div>
+        <div class="comp-card"><h4>🌍 Indirect Global</h4><div class="ci">Google Search</div><div class="ci">ChatGPT</div><div class="ci">Wikipedia legal pages</div><div class="ci">LegalZoom (USA)</div></div>
+      </div>
+
+      <h3 class="pg-h" style="font-size:16px;margin-bottom:10px">📈 Macro Trends</h3>
+      <div class="trend-grid">
+        <div class="tc-card fav">
+          <h4>✅ Favourable Trends</h4>
+          <div class="trow"><span class="tarea">Technology</span><span class="tdesc">AI and NLP advancements enable cheaper, accurate multilingual voice processing for regional languages</span></div>
+          <div class="trow"><span class="tarea">Social</span><span class="tdesc">Rising smartphone adoption in rural India is increasing demand for affordable digital legal services</span></div>
+        </div>
+        <div class="tc-card unfav">
+          <h4>❌ Unfavourable Trends</h4>
+          <div class="trow"><span class="tarea">Legal</span><span class="tdesc">Data privacy laws may restrict AI legal advisory services in India</span></div>
+          <div class="trow"><span class="tarea">Technology</span><span class="tdesc">Low internet connectivity in deep rural areas limits AI solution adoption</span></div>
+        </div>
+      </div>
+      <p style="font-size:10px;color:var(--text3);margin-bottom:16px">Data Sources: TRAI Report 2023, NALSA Report 2022, World Justice Project 2023</p>
+
+      <div class="disc">
+        <strong>⚠️ Disclaimer:</strong> Electro Spark provides general legal information and awareness only — NOT a substitute for professional legal advice. For complex matters consult a licensed advocate or contact DLSA at <strong>1516</strong> for free legal aid.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EMERGENCY PAGE ── -->
+  <div class="page" id="page-emergency">
+    <div class="inner-page">
+      <h2 class="pg-h">Emergency Contacts</h2>
+      <p class="pg-s">All helplines are free. Click any card to copy the number to clipboard.</p>
+      <div class="em-grid">
+        <div class="ec" onclick="copyNum('100')"><div class="ec-i">🚓</div><h3>Police</h3><div class="ec-num">100</div><p>Crime, assault, theft, law enforcement</p></div>
+        <div class="ec" onclick="copyNum('181')"><div class="ec-i">🛡️</div><h3>Women Helpline</h3><div class="ec-num">181</div><p>Domestic violence, dowry, harassment</p></div>
+        <div class="ec" onclick="copyNum('1098')"><div class="ec-i">👶</div><h3>Child Helpline</h3><div class="ec-num">1098</div><p>Children in abuse or danger</p></div>
+        <div class="ec" onclick="copyNum('1516')"><div class="ec-i">⚖️</div><h3>Free Legal Aid</h3><div class="ec-num">1516</div><p>DLSA — free legal help for all</p></div>
+        <div class="ec" onclick="copyNum('1930')"><div class="ec-i">💻</div><h3>Cyber Crime</h3><div class="ec-num">1930</div><p>Online fraud, hacking, digital crime</p></div>
+        <div class="ec" onclick="copyNum('1915')"><div class="ec-i">🛒</div><h3>Consumer Helpline</h3><div class="ec-num">1915</div><p>Product fraud, consumer rights</p></div>
+        <div class="ec" onclick="copyNum('108')"><div class="ec-i">🚑</div><h3>Ambulance</h3><div class="ec-num">108</div><p>Medical emergency, accident</p></div>
+        <div class="ec" onclick="copyNum('1800-11-4444')"><div class="ec-i">👷</div><h3>Labour Helpline</h3><div class="ec-num" style="font-size:13px">1800-11-4444</div><p>Wage theft, wrongful termination</p></div>
+        <div class="ec" onclick="copyNum('14567')"><div class="ec-i">👴</div><h3>Senior Citizen</h3><div class="ec-num">14567</div><p>Elderly abuse, pension problems</p></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+</div>
+
+<!-- Upgrade Modal -->
+<div class="overlay" id="modal-upgrade">
+  <div class="modal">
+    <h3>Upgrade Your Plan</h3>
+    <p>Unlock unlimited queries, voice input, 10+ languages and more. Choose a plan below.</p>
+    <div class="modal-btns">
+      <button class="mbtn" onclick="hideModal('upgrade')">Cancel</button>
+      <button class="mbtn" onclick="activatePlan('premium');hideModal('upgrade')">Premium — ₹99/mo</button>
+      <button class="mbtn go" onclick="activatePlan('ngo');hideModal('upgrade')">NGO — ₹999/mo</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ════════════════════════════════════════════════════
+// ELECTRO SPARK — Complete App v4.0
+// Production-ready | All PPT content | Offline + API
+// ════════════════════════════════════════════════════
+
+// ── CONFIG ───────────────────────────────────────────
+// Change this to your deployed backend URL when deployed
+// e.g. "https://electro-spark-api.onrender.com"
+const API_BASE = "http://localhost:5000";
+const FREE_DAILY_LIMIT = 20;
+
+// ── STATE ─────────────────────────────────────────────
+let lang = "en", busy = false, recording = false;
+let plan = "free", usedToday = 0;
+let heroVisible = true, sidebarOpen = true;
+const SID = (()=>{
+  let s = localStorage.getItem('es_sid');
+  if(!s){s=(crypto.randomUUID?crypto.randomUUID():Date.now().toString());localStorage.setItem('es_sid',s);}
+  return s;
+})();
+
+// Load persisted usage
+(()=>{
+  const saved = JSON.parse(localStorage.getItem('es_usage')||'{}');
+  const today = new Date().toDateString();
+  if(saved.date===today){usedToday=saved.count||0;}
+  else{usedToday=0;saveUsage();}
+  plan = localStorage.getItem('es_plan')||'free';
+})();
+
+function saveUsage(){localStorage.setItem('es_usage',JSON.stringify({date:new Date().toDateString(),count:usedToday}));}
+
+// ── LEGAL DB (Offline) ────────────────────────────────
+const CATS = {
+  land:     {icon:"🏡",title:"Land Rights",   sample:"What are my land rights?"},
+  labor:    {icon:"👷",title:"Labor Rights",   sample:"What are my labor rights?"},
+  women:    {icon:"🛡️",title:"Women's Rights", sample:"Protection from domestic violence"},
+  consumer: {icon:"🛒",title:"Consumer Rights",sample:"How to file a consumer complaint?"},
+  govt:     {icon:"🏛️",title:"Govt Schemes",  sample:"What government schemes are available?"},
+  criminal: {icon:"🚔",title:"Criminal Law",   sample:"How to file an FIR?"},
+  family:   {icon:"👨‍👩‍👧",title:"Family Law",    sample:"What are my inheritance rights?"},
+  rti:      {icon:"📋",title:"RTI",            sample:"How to file an RTI application?"},
+  cyber:    {icon:"💻",title:"Cyber Law",      sample:"What to do if I am victim of online fraud?"}
+};
+
+const ANSWERS = {
+  land:{
+    en:`🏡 <b>Land Rights in India</b><br><br>Protected under <b>Transfer of Property Act, 1882</b>.<br><br>✅ <b>Your rights:</b> own, use, sell, lease, mortgage your land.<br><br>📋 <b>Verify ownership:</b><br>• Online: <b>eservices.tn.gov.in</b> (Tamil Nadu)<br>• Visit Tehsildar / Revenue office<br>• Need: Survey number + Village name<br><br>⚠️ <b>If someone encroaches:</b><br>1. File complaint at police station<br>2. Petition to Tahsildar<br>3. File civil suit in court<br><br>📜 <b>To transfer land:</b><br>1. Sale Deed at Sub-Registrar<br>2. Stamp duty 7% (TN)<br>3. Update Patta within 90 days<br><br>📞 Legal Aid: <b>1516</b>`,
+    ta:`🏡 <b>நில உரிமைகள்</b><br><br><b>சொத்து பரிமாற்ற சட்டம், 1882</b> பாதுகாக்கிறது.<br><br>✅ <b>உங்கள் உரிமை:</b> வைத்திருக்க, பயன்படுத்த, விற்க, குத்தகை, அடமானம்.<br><br>📋 <b>சரிபார்க்க:</b> <b>eservices.tn.gov.in</b><br>• தாசில்தார் அலுவலகம்<br><br>⚠️ <b>ஆக்கிரமிப்பு:</b><br>1. போலீஸ் புகார்<br>2. தாசில்தார் மனு<br>3. நீதிமன்றம்<br><br>📞 சட்ட உதவி: <b>1516</b>`
+  },
+  labor:{
+    en:`👷 <b>Labour Rights in India</b><br><br>💰 <b>Minimum Wage (TN):</b> Unskilled ₹400–500/day · Skilled ₹500–700/day<br><br>📋 <b>If wrongfully fired:</b><br>1. Entitled to 1 month notice or pay<br>2. Gratuity after 5+ years service<br>3. Complain to Labour Commissioner<br>4. Approach Labour Court<br><br>💼 <b>Provident Fund (PF):</b><br>• Mandatory: companies with 20+ employees<br>• Both contribute 12% of basic salary<br>• Check balance: <b>epfindia.gov.in</b> (UAN number)<br><br>🤰 <b>Maternity Leave:</b> 26 weeks paid · Cannot be fired during leave<br><br>⏰ <b>Overtime:</b> Double wage · Max 9hrs/day, 48hrs/week<br><br>📞 Labour Helpline: <b>1800-11-4444</b>`,
+    ta:`👷 <b>தொழிலாளர் உரிமைகள்</b><br><br>💰 <b>குறைந்தபட்ச ஊதியம்:</b> ₹400–700/நாள்<br><br>📋 <b>அனியாயமாக பணி நீக்கம்:</b><br>1. 1மாத சம்பளம் + கிராஜுவிட்டி<br>2. தொழிலாளர் ஆணையர் புகார்<br><br>💼 PF: 20+ ஊழியர் → கட்டாயம் | 12%+12%<br>• <b>epfindia.gov.in</b><br><br>📞 உதவி: <b>1800-11-4444</b>`
+  },
+  women:{
+    en:`🛡️ <b>Women's Rights & Protection</b><br><br>🚨 <b>Domestic Violence (PWDVA 2005):</b><br>• Physical, emotional, sexual & economic abuse covered<br>• Call <b>Women Helpline: 181</b> (24/7, free)<br>• Protection Order from court within 3 days<br>• Apply for monetary relief + residence order<br><br>⚖️ <b>Dowry Harassment (Sec 498A IPC):</b><br>• Cognizable offence — police MUST register FIR<br>• Call nearest All Women Police Station<br><br>💼 <b>Workplace POSH Act 2013:</b><br>• File with Internal Complaints Committee (ICC)<br>• Within 3 months of incident<br>• Cannot be fired for filing<br><br>👩‍⚖️ <b>Divorce:</b> Entitled to alimony · Family Court · Free aid: <b>1516</b><br><br>📞 Women Helpline: <b>181</b> · Police: <b>100</b>`,
+    ta:`🛡️ <b>பெண்களின் உரிமைகள்</b><br><br>🚨 <b>குடும்ப வன்முறை (PWDVA 2005):</b><br>• <b>பெண்கள் உதவி: 181</b> (24/7 இலவசம்)<br>• 3 நாட்களில் பாதுகாப்பு உத்தரவு<br><br>⚖️ வரதட்சணை: FIR கட்டாயம்<br>💼 POSH: ICC க்கு 3 மாதத்தில் புகார்<br><br>📞 பெண்கள் உதவி: <b>181</b>`
+  },
+  consumer:{
+    en:`🛒 <b>Consumer Rights (CPA 2019)</b><br><br>📜 <b>Your 6 Rights:</b> Safety · Information · Choice · Heard · Redressal · Education<br><br>📋 <b>File Complaint:</b><br>• Online: <b>edaakhil.nic.in</b> (completely free!)<br>• District Commission: claims up to ₹50 lakhs<br>• No lawyer needed! Fee: only ₹100–200<br>• Resolved typically in 3–5 months<br><br>🛍️ <b>Online Shopping Fraud:</b><br>• <b>cybercrime.gov.in</b> or call <b>1930</b><br>• Bank chargeback within 45 days<br>• Keep all screenshots as evidence<br><br>🏥 <b>Medical Negligence:</b> File at Consumer Commission (medical = service)<br><br>📞 Consumer Helpline: <b>1915</b>`,
+    ta:`🛒 <b>நுகர்வோர் உரிமைகள்</b><br><br>📜 6 உரிமைகள்: பாதுகாப்பு, தகவல், தேர்வு, கேட்கப்படுதல், நிவாரணம், கல்வி<br><br>📋 <b>புகார்:</b> <b>edaakhil.nic.in</b> (இலவசம்!)<br>வழக்கறிஞர் தேவையில்லை! ₹100–200<br><br>📞 நுகர்வோர்: <b>1915</b>`
+  },
+  govt:{
+    en:`🏛️ <b>Key Government Schemes</b><br><br>🏠 <b>PM Awas Yojana:</b> Income < ₹18L + no pucca house → <b>pmaymis.gov.in</b> → subsidy ₹1.5–2.67L · Helpline: 1800-11-6163<br><br>🍚 <b>Ration Card (TN):</b> <b>tnpds.gov.in</b> → rice ₹1/kg · Helpline: 1967<br><br>👴 <b>Old Age Pension (TN):</b> ₹1000/month (above 60) → apply at Panchayat office<br><br>🌾 <b>PM-KISAN:</b> ₹6000/year for farmers → <b>pmkisan.gov.in</b><br><br>📚 <b>Scholarships:</b> SC/ST/OBC → <b>scholarships.gov.in</b> · Minority → <b>minorityaffairs.gov.in</b><br><br>📞 TN Helpline: <b>1800-425-1213</b>`,
+    ta:`🏛️ <b>அரசு திட்டங்கள்</b><br><br>🏠 PM Awas Yojana: <b>pmaymis.gov.in</b> | ₹1.5–2.67L மானியம்<br>🍚 ரேஷன் அட்டை: <b>tnpds.gov.in</b> | அரிசி ₹1/கிலோ<br>👴 வயதான பென்ஷன்: ₹1000/மாதம் | பஞ்சாயத்து அலுவலகம்<br>🌾 PM-KISAN: ₹6000/ஆண்டு<br><br>📞 அரசு: <b>1800-425-1213</b>`
+  },
+  criminal:{
+    en:`🚔 <b>Criminal Law — Know Your Rights</b><br><br>📝 <b>Filing an FIR:</b><br>1. Go to nearest police station<br>2. Police legally CANNOT refuse to register<br>3. Get FREE copy of FIR — it's your right<br>4. If refused → <b>tncrime.tn.gov.in</b> or approach Magistrate<br><br>🤝 <b>If Arrested, you have the right to:</b><br>• Know the reason for arrest<br>• Inform a family member immediately<br>• Choose your own lawyer<br>• Be produced before Magistrate within 24 hours<br>• Receive FREE legal aid<br>• NOT be tortured (this is punishable)<br><br>⚖️ <b>Bail:</b> Bailable offence → your RIGHT at police station · Non-bailable → apply in court · Free aid: <b>1516</b><br><br>💻 Cyber crime: <b>cybercrime.gov.in</b> / <b>1930</b><br><br>📞 Police: <b>100</b> · Legal Aid: <b>1516</b>`,
+    ta:`🚔 <b>குற்றவியல் சட்டம்</b><br><br>📝 FIR: போலீஸ் மறுக்க முடியாது | இலவச நகல் பெறவும்<br>• மறுத்தால்: <b>tncrime.tn.gov.in</b><br><br>🤝 <b>கைது:</b> காரணம் கேட்கலாம் | வழக்கறிஞர் தேர்வு | 24 மணி நேரம்<br><br>📞 போலீஸ்: <b>100</b> · சட்ட உதவி: <b>1516</b>`
+  },
+  family:{
+    en:`👨‍👩‍👧 <b>Family Law in India</b><br><br>🏠 <b>Inheritance (Hindu Succession Act 2005):</b><br>• Daughters have EQUAL rights as sons in ancestral property<br>• No Will → equal shares to all legal heirs<br>• Register Will at Sub-Registrar (₹200–500) — strongly recommended<br><br>💍 <b>Marriage Requirements:</b><br>• Minimum age: 21 (groom), 18 (bride)<br>• Register at Sub-Registrar within 90 days<br>• Registration is FREE in Tamil Nadu<br><br>👶 <b>Child Custody:</b> Based on child's best interest · Mother preferred under 5 · Father pays maintenance always<br><br>📜 <b>Valid Will:</b> Written + testator signature + 2 witnesses sign · Register recommended<br><br>📞 Free Legal Aid: <b>DLSA 1516</b>`,
+    ta:`👨‍👩‍👧 <b>குடும்பச் சட்டம்</b><br><br>🏠 <b>வாரிசு:</b> மகள் = மகன் | உயில் பதிவு: ₹200–500<br>💍 திருமணம்: 90 நாளில் பதிவு (தமிழ்நாடு இலவசம்)<br>👶 குழந்தை: சிறந்த நலன் | 5 வயதுக்கு கீழ் தாய்<br><br>📞 இலவச சட்ட உதவி: <b>1516</b>`
+  },
+  rti:{
+    en:`📋 <b>Right to Information Act 2005</b><br><br>Every citizen has the right to get information from any government office.<br><br>📝 <b>How to File RTI:</b><br>1. Write to Public Information Officer (PIO) of the concerned department<br>2. Pay ₹10 fee (BPL card holders: completely FREE)<br>3. Online: <b>rtionline.gov.in</b><br>4. Response within <b>30 days</b> (mandatory)<br>5. Life/liberty matters: within <b>48 hours</b><br><br>✅ <b>You can get:</b> Govt decisions, files, budgets, scheme beneficiary lists, corruption info<br><br>❌ <b>Cannot get:</b> Cabinet proceedings, national security, third-party personal data<br><br>⚠️ <b>If denied:</b> First appeal → Appellate Authority → State Information Commission<br><br>📞 Help: District Collector Office`,
+    ta:`📋 <b>தகவல் அறியும் உரிமை (RTI 2005)</b><br><br>ஒவ்வொருவருக்கும் அரசிடம் தகவல் பெறும் உரிமை உள்ளது.<br><br>📝 PIO க்கு விண்ணப்பம் | ₹10 (BPL: இலவசம்)<br>• ஆன்லைன்: <b>rtionline.gov.in</b><br>• <b>30 நாட்களில்</b> பதில் கட்டாயம்<br><br>📞 மாவட்ட ஆட்சியர் அலுவலகம்`
+  },
+  cyber:{
+    en:`💻 <b>Cyber Crime — Act Immediately!</b><br><br>🚨 <b>Online Fraud — Steps (First Hours Critical):</b><br>1. Call <b>1930</b> IMMEDIATELY (golden hour)<br>2. File at <b>cybercrime.gov.in</b><br>3. Contact bank to freeze the transaction<br>4. File FIR at local Cyber Crime Cell<br>5. Screenshot ALL evidence (chats, emails, payment records)<br><br>📸 <b>Private Photo Sharing Without Consent:</b><br>• IT Act Sec 66E → 3 years imprisonment + fine<br>• Report: cybercrime.gov.in · Women in distress: <b>181</b><br><br>🔐 <b>Account Hacked:</b><br>1. Change linked email password immediately<br>2. Enable 2-factor authentication<br>3. Report to platform (FB/IG/WhatsApp)<br><br>📵 <b>Mobile Stolen:</b> Block SIM (call operator) · Report IMEI: <b>ceir.gov.in</b><br><br>📞 Cyber Helpline: <b>1930</b>`,
+    ta:`💻 <b>சைபர் குற்றம் — உடனடியாக!</b><br><br>🚨 <b>1930</b> உடனடியாக அழைக்கவும்!<br>• <b>cybercrime.gov.in</b> புகார்<br>• வங்கியை தொடர்பு கொண்டு நிறுத்தவும்<br>• FIR பதிவு செய்யவும்<br>• சான்றுகளை screenshot எடுக்கவும்<br><br>📞 சைபர் உதவி: <b>1930</b>`
+  }
+};
+
+const KEYS = {
+  land:["land","property","patta","chitta","plot","encroach","survey","deed","நிலம்","சொத்து","பட்டா"],
+  labor:["labor","labour","salary","wage","fired","terminate","pf","provident","gratuity","overtime","maternity","சம்பளம்","வேலை","தொழிலாளர்"],
+  women:["domestic","dowry","harassment","divorce","maintenance","women","wife","posh","abuse","alimony","பெண்","வரதட்சணை","விவாகரத்து"],
+  consumer:["consumer","product","defective","refund","complaint","fraud","cheated","online shopping","warranty","medical","bank","நுகர்வோர்","மோசடி","புகார்"],
+  govt:["scheme","yojana","government","ration","pension","subsidy","farmer","scholarship","bpl","யோஜனா","திட்டம்","ரேஷன்","ஓய்வூதியம்"],
+  criminal:["fir","police","arrest","bail","crime","theft","assault","murder","blackmail","complaint","எஃப்ஐஆர்","போலீஸ்","கைது","ஜாமீன்"],
+  family:["marriage","inheritance","will","custody","adoption","heir","succession","divorce","child","திருமணம்","வாரிசு","உயில்","குழந்தை"],
+  rti:["rti","right to information","government information","தகவல் உரிமை","ஆர்டிஐ"],
+  cyber:["cyber","hacking","fraud","scam","phishing","password","account","online fraud","mobile theft","சைபர்","ஆன்லைன் மோசடி","ஹேக்கிங்"]
+};
+
+const GREETINGS = ["hello","hi","help","start","hey","vanakkam","வணக்கம்","नमस्ते","namaste","good morning","good evening","how are you","what can you do"];
+
+// ── INIT ──────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', ()=>{
+  buildTopics();
+  buildQuickGrid();
+  buildChart();
+  buildPlans();
+  updateQbar();
+  updatePlanUI();
+});
+
+function buildTopics(){
+  const el=document.getElementById('topicsEl');
+  Object.entries(CATS).forEach(([k,v])=>{
+    const b=document.createElement('button');
+    b.className='tc';
+    b.innerHTML=`<span style="font-size:13px">${v.icon}</span>${v.title}`;
+    b.onclick=()=>{goPage('chat',null);setTimeout(()=>quickSend(v.sample),60);};
+    el.appendChild(b);
+  });
+}
+
+function buildQuickGrid(){
+  const g=document.getElementById('quickGrid');
+  Object.entries(CATS).forEach(([k,v])=>{
+    const c=document.createElement('button');
+    c.className='qc';
+    c.innerHTML=`<div class="qc-i">${v.icon}</div><div class="qc-t">${v.title}</div><div class="qc-s">Tap to ask →</div>`;
+    c.onclick=()=>quickSend(v.sample);
+    g.appendChild(c);
+  });
+}
+
+function buildChart(){
+  const data=[
+    {y:"Year 1",r:5,e:12,p:-7},
+    {y:"Year 2",r:15,e:18,p:-3},
+    {y:"Year 3",r:35,e:25,p:10}
+  ];
+  const max=35,h=100,el=document.getElementById('chartBars');
+  data.forEach(d=>{
+    const g=document.createElement('div');
+    g.className='bg';g.setAttribute('data-y',d.y);
+    const mk=(cls,val)=>{
+      const b=document.createElement('div');
+      b.className=`bar ${cls}`;
+      b.style.height=(Math.abs(val)/max*h)+'%';
+      b.setAttribute('data-v',`₹${Math.abs(val)}L${val<0?' (Loss)':''}`);
+      return b;
+    };
+    g.appendChild(mk('r',d.r));g.appendChild(mk('e',d.e));g.appendChild(mk('p',d.p));
+    el.appendChild(g);
+  });
+}
+
+function buildPlans(){
+  const plans={
+    free:{name:'Free',price:'₹0',priceC:'free-c',label:'/month',qs:20,feats:['20 queries per day','6 regional languages','Text input','Basic legal Q&A','Emergency contacts']},
+    premium:{name:'Premium',price:'₹99',priceC:'prem-c',label:'/month',qs:-1,feats:['Unlimited queries','10+ regional languages','Voice input support','Document assistance','Priority response','Chat history']},
+    ngo:{name:'NGO Plan',price:'₹999',priceC:'ngo-c',label:'/month',qs:-1,feats:['Everything in Premium','Multi-user access','Analytics dashboard','REST API access','Custom knowledge base','Dedicated support']}
+  };
+  const row=document.getElementById('plansRow');
+  Object.entries(plans).forEach(([k,v])=>{
+    const c=document.createElement('div');
+    c.className='plcard'+(k==='premium'?' best':'');
+    c.id='plancard-'+k;
+    let inner=k==='premium'?'<div class="best-badge">Most Popular</div>':'' ;
+    inner+=`<div class="pl-name">${v.name}</div>`;
+    inner+=`<div class="pl-price ${v.priceC}">${v.price} <span>${v.label}</span></div>`;
+    v.feats.forEach(f=>{inner+=`<div class="plfeat">${f}</div>`;});
+    const btnTxt=k===plan?'Current Plan':'Switch to '+v.name;
+    inner+=`<button class="subscribe-btn${k===plan?' active-plan':''}" id="subbtn-${k}" onclick="activatePlan('${k}')">${btnTxt}</button>`;
+    c.innerHTML=inner;
+    row.appendChild(c);
+  });
+}
+
+function updatePlansUI(){
+  ['free','premium','ngo'].forEach(k=>{
+    const btn=document.getElementById('subbtn-'+k);
+    if(!btn)return;
+    btn.textContent=k===plan?'Current Plan':'Switch to '+k.charAt(0).toUpperCase()+k.slice(1);
+    btn.className='subscribe-btn'+(k===plan?' active-plan':'');
+  });
+}
+
+// ── PLAN / QUOTA ──────────────────────────────────────
+function activatePlan(p){
+  plan=p;
+  localStorage.setItem('es_plan',p);
+  updatePlanUI();
+  updateQbar();
+  updatePlansUI();
+  showToast(`✅ Switched to ${p.toUpperCase()} plan!`);
+  // Also inform backend
+  fetch(`${API_BASE}/subscribe`,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({session_id:SID,plan:p})}).catch(()=>{});
+}
+
+function updatePlanUI(){
+  const pill=document.getElementById('planPill');
+  pill.textContent=plan.toUpperCase();
+  pill.className='plan-pill '+plan;
+}
+
+function updateQbar(){
+  const bar=document.getElementById('qbar');
+  const txt=document.getElementById('qbarTxt');
+  const fill=document.getElementById('qbarFill');
+  if(plan!=='free'){bar.classList.add('hidden');return;}
+  bar.classList.remove('hidden');
+  const left=Math.max(0,FREE_DAILY_LIMIT-usedToday);
+  const pct=(left/FREE_DAILY_LIMIT)*100;
+  txt.textContent=`${left} of ${FREE_DAILY_LIMIT} free queries remaining today`;
+  fill.style.width=pct+'%';
+  fill.style.background=pct>40?'linear-gradient(90deg,var(--jade),var(--sky))':
+                         pct>20?'var(--gold)':'var(--rose)';
+}
+
+function canSend(){
+  if(plan!=='free')return true;
+  return usedToday<FREE_DAILY_LIMIT;
+}
+
+// ── NAV ───────────────────────────────────────────────
+function goPage(name,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  const t={chat:'Legal Chat',persona:'Customer Persona',financials:'Financial Projections',about:'About & Analysis',emergency:'Emergency Contacts'};
+  document.getElementById('pgTitle').textContent=t[name]||name;
+}
+
+function toggleSidebar(){
+  const sb=document.getElementById('sidebar');
+  sidebarOpen=!sidebarOpen;
+  sb.style.width=sidebarOpen?'248px':'0';
+  sb.style.overflow=sidebarOpen?'hidden':'hidden';
+  if(sidebarOpen)setTimeout(()=>{sb.style.overflow='';},310);
+}
+
+// ── LANGUAGE ──────────────────────────────────────────
+function setLang(btn){
+  document.querySelectorAll('.lp').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  lang=btn.dataset.lang;
+}
+
+// ── INPUT HELPERS ─────────────────────────────────────
+function resize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,100)+'px';}
+function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg();}}
+
+function nowTime(){return new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});}
+
+function detectScript(text){
+  const ranges=[['ta',0x0B80,0x0BFF],['hi',0x0900,0x097F],['te',0x0C00,0x0C7F],['kn',0x0C80,0x0CFF],['ml',0x0D00,0x0D7F]];
+  let best='en',bc=0;
+  for(const[l,lo,hi]of ranges){const c=[...text].filter(ch=>ch.charCodeAt(0)>=lo&&ch.charCodeAt(0)<=hi).length;if(c>bc){bc=c;best=l;}}
+  return best;
+}
+
+function addMsg(html,role,isVoice=false){
+  if(role==='user'&&heroVisible){
+    const h=document.getElementById('heroEl');
+    if(h){h.style.transition='opacity .3s';h.style.opacity='0';setTimeout(()=>{h.style.display='none';},300);}
+    heroVisible=false;
+  }
+  const body=document.getElementById('chatBody');
+  const row=document.createElement('div');row.className='mrow '+role;
+  if(role==='bot'){
+    const s=document.createElement('div');s.className='msender';
+    s.innerHTML='<div class="dot-j"></div> Electro Spark';row.appendChild(s);
+  }
+  const b=document.createElement('div');b.className='bub '+role;
+  b.innerHTML=html+(isVoice&&role==='user'?'<span class="vbadge">🎤 Voice</span>':'');
+  row.appendChild(b);
+  const m=document.createElement('div');m.className='mtime';
+  m.textContent=nowTime()+(role==='user'?' ✓✓':'');
+  row.appendChild(m);
+  body.appendChild(row);
+  body.scrollTop=body.scrollHeight;
+  return row;
+}
+
+// ── OFFLINE NLP ───────────────────────────────────────
+function offlineAnswer(text){
+  const t=text.toLowerCase().trim();
+  const script=detectScript(text);
+  const rl=(lang==='en'&&script!=='en')?script:lang;
+
+  if(GREETINGS.some(g=>t.includes(g))||t.length<4){
+    return rl==='ta'
+      ?'வணக்கம்! 🙏 நான் Electro Spark சட்ட உதவியாளர்.<br>நில உரிமை, தொழிலாளர், பெண்கள், நுகர்வோர் உரிமைகள், அரசு திட்டங்கள், குற்றவியல் சட்டம், RTI, சைபர் சட்டம் பற்றி கேளுங்கள்!'
+      :'Welcome! 🙏 I\'m Electro Spark Legal Assistant.<br>Ask me about: <b>Land Rights, Labour Rights, Women\'s Rights, Consumer Rights, Govt Schemes, Criminal Law, Family Law, RTI</b> or <b>Cyber Law</b> — in any Indian language!';
+  }
+
+  for(const[cat,keys]of Object.entries(KEYS)){
+    if(keys.some(k=>t.includes(k))){
+      const ans=ANSWERS[cat];
+      return ans?(ans[rl]||ans['en']):'';
+    }
+  }
+
+  return rl==='ta'
+    ?'❓ மன்னிக்கவும், உங்கள் கேள்விக்கு தகவல் கிடைக்கவில்லை.<br><br>📞 இலவச சட்ட உதவி: <b>1516</b> (DLSA)<br>மேலே உள்ள தலைப்புகளை கிளிக் செய்யவும்.'
+    :'❓ I couldn\'t find specific info for your query.<br><br>📞 Free legal help: <b>1516</b> (DLSA National Helpline)<br>Or tap one of the topic buttons to browse by category.';
+}
+
+// ── VOICE ─────────────────────────────────────────────
+let recognition=null;
+function toggleVoice(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){showToast('⚠️ Voice not supported. Please use Chrome or Edge browser.');return;}
+  if(recording){recognition&&recognition.stop();return;}
+  recognition=new SR();
+  const langMap={ta:'ta-IN',hi:'hi-IN',te:'te-IN',kn:'kn-IN',ml:'ml-IN',en:'en-IN'};
+  recognition.lang=langMap[lang]||'en-IN';
+  recognition.interimResults=false;
+  recognition.onresult=(e)=>{
+    const t=e.results[0][0].transcript;
+    document.getElementById('inp').value=t;resize(document.getElementById('inp'));
+    recording=false;document.getElementById('vbtn').classList.remove('rec');
+    sendMsg(true);
+  };
+  recognition.onerror=recognition.onend=()=>{
+    recording=false;document.getElementById('vbtn').classList.remove('rec');
+  };
+  recognition.start();
+  recording=true;document.getElementById('vbtn').classList.add('rec');
+  showToast('🎤 Listening... speak now');
+}
+
+// ── SEND ──────────────────────────────────────────────
+function quickSend(text){document.getElementById('inp').value=text;sendMsg();}
+
+async function sendMsg(isVoice=false){
+  if(busy)return;
+  const inp=document.getElementById('inp');
+  const text=inp.value.trim();
+  if(!text)return;
+
+  // Quota check
+  if(!canSend()){
+    showModal('upgrade');
+    addMsg('⚠️ You\'ve used all <b>20 free queries</b> for today.<br>Upgrade to <b>Premium (₹99/month)</b> for unlimited queries.<br>Or call free legal aid: <b>1516</b>','bot');
+    return;
+  }
+
+  goPage('chat',document.querySelector('.nb'));
+  addMsg(text,'user',isVoice);
+  inp.value='';inp.style.height='auto';
+  busy=true;document.getElementById('sbtn').disabled=true;
+
+  const typingRow=addMsg('<div class="typing-ind"><span></span><span></span><span></span></div>','bot');
+
+  let response=null;
+
+  // Try backend (3s timeout)
+  try{
+    const res=await Promise.race([
+      fetch(`${API_BASE}/chat`,{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({message:text,language:lang,session_id:SID,is_voice:isVoice})
+      }),
+      new Promise((_,rej)=>setTimeout(()=>rej('timeout'),3000))
+    ]);
+    const d=await res.json();
+    if(d.response)response=d.response;
+    if(d.quota_exceeded){showModal('upgrade');}
+  }catch(_){/* offline */}
+
+  await new Promise(r=>setTimeout(r,450+Math.random()*350));
+  typingRow.remove();
+
+  if(!response)response=offlineAnswer(text);
+  addMsg(response,'bot');
+
+  // Update usage for free plan
+  if(plan==='free'){usedToday++;saveUsage();updateQbar();}
+  busy=false;document.getElementById('sbtn').disabled=false;
+  inp.focus();
+}
+
+// ── MODAL ─────────────────────────────────────────────
+function showModal(name){document.getElementById('modal-'+name).classList.add('show');}
+function hideModal(name){document.getElementById('modal-'+name).classList.remove('show');}
+
+// ── TOAST ─────────────────────────────────────────────
+let toastTimer;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),2500);
+}
+
+// ── COPY ──────────────────────────────────────────────
+function copyNum(num){
+  navigator.clipboard&&navigator.clipboard.writeText(num);
+  showToast(`📋 Copied: ${num}`);
+}
+
+// Close modal on overlay click
+document.querySelectorAll('.overlay').forEach(o=>{
+  o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('show');});
+});
+</script>
+</body>
+</html>

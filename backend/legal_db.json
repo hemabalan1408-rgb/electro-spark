@@ -1,0 +1,135 @@
+{
+  "categories": {
+    "land_rights": {
+      "icon": "🏡",
+      "keywords": ["land","property","plot","acres","patta","chitta","encroach","survey","boundary","ownership","register","deed","sale deed","gift deed","mutation","நிலம்","சொத்து","பட்டா","சிட்டா","ஆக்கிரமிப்பு"],
+      "qa": [
+        {"q":"What are my land rights in India?","a":"In India, land rights are protected under the Transfer of Property Act, 1882. You have the right to own, use, sell, lease, or mortgage your land. To verify ownership, check your Patta (land record) at the local Tehsildar office or online via eservices.tn.gov.in (Tamil Nadu). Keep all original documents safely."},
+        {"q":"How do I check my land records online?","a":"You can check land records (Patta/Chitta) online at eservices.tn.gov.in for Tamil Nadu. You need your survey number and village name. Records show ownership, land type, and extent. You can also visit your nearest Tehsildar/Revenue office in person."},
+        {"q":"What to do if someone encroaches on my land?","a":"If someone encroaches on your land: 1) File a complaint at the local police station. 2) Submit a petition to the Tahsildar office with land documents. 3) File a civil suit in the local court. 4) Contact District Collector if the encroachment is by a government body. Keep all land documents (Patta, Sale Deed) ready as evidence."},
+        {"q":"How to transfer land ownership?","a":"To transfer land: 1) Execute a Sale Deed or Gift Deed at the Sub-Registrar office. 2) Pay stamp duty (7% in Tamil Nadu). 3) Register the document with 2 witnesses. 4) Update Patta in your name at Tehsildar office within 90 days. Consult a local lawyer for deed drafting. Cost varies by property value."},
+        {"q":"What is Patta and how to get it?","a":"Patta is an official land ownership document issued by the Revenue Department. To get Patta: 1) Apply online at eservices.tn.gov.in or visit Tahsildar office. 2) Submit: application form, proof of purchase (Sale Deed), Aadhaar card. 3) Patta is issued within 30 days. It is required for bank loans, construction permits, and legal disputes."},
+        {"q":"How to resolve property disputes with family members?","a":"For family property disputes: 1) Try mediation first — approach District Mediation Centre (free service). 2) File a partition suit in Civil Court if mediation fails. 3) For ancestral property, daughters have equal rights under Hindu Succession Act 2005. 4) Consult DLSA (District Legal Services Authority) for free legal advice. Helpline: 1516."}
+      ]
+    },
+    "labor_rights": {
+      "icon": "👷",
+      "keywords": ["salary","wage","job","employer","work","fired","terminate","overtime","leave","esi","pf","provident","minimum wage","bonus","gratuity","maternity","இடைநீக்கம்","சம்பளம்","வேலை","தொழிலாளர்","ஓவர்டைம்"],
+      "qa": [
+        {"q":"What is the minimum wage in Tamil Nadu?","a":"In Tamil Nadu, minimum wages vary by industry category: Unskilled workers: ₹400-500/day, Semi-skilled: ₹450-550/day, Skilled workers: ₹500-700/day. Employers must pay at least the minimum wage. If not paid, file a complaint with the Labour Department or call Labour Helpline: 1800-11-4444."},
+        {"q":"What are my rights if I am fired unfairly?","a":"If unfairly dismissed: 1) You are entitled to one month's notice or pay in lieu. 2) Gratuity if you worked 5+ years (15 days salary per year of service). 3) File a complaint with the Labour Commissioner within 3 years of termination. 4) You can approach the Labour Court for reinstatement or compensation. Keep appointment letter and salary slips."},
+        {"q":"Am I entitled to provident fund PF?","a":"Yes! Under the EPF Act, if your employer has 20+ employees and your salary is below ₹15,000/month, PF is mandatory. Both you and employer contribute 12% each of basic salary. Check your PF balance at epfindia.gov.in using your UAN number. Employer cannot deduct PF without depositing it — this is a criminal offence."},
+        {"q":"What are my maternity leave rights?","a":"Under the Maternity Benefit Act 2017: Women are entitled to 26 weeks paid maternity leave for first 2 children, 12 weeks for subsequent children. Employer cannot dismiss a woman during maternity leave. Also entitled to: nursing breaks, work from home option. Penalty for violation: up to 1 year imprisonment for employer."},
+        {"q":"What is gratuity and when do I get it?","a":"Gratuity is a retirement benefit paid by employer. Eligibility: After completing 5 years of continuous service. Calculation: Last drawn salary × 15 days × number of years of service ÷ 26. Maximum: ₹20 lakhs. Must be paid within 30 days of leaving. File claim with employer; if denied, approach Labour Commissioner."},
+        {"q":"Can my employer deduct salary without notice?","a":"No! Employers cannot deduct salary arbitrarily. Allowed deductions: PF, ESI, TDS, authorized advances, absent days. Unauthorized deductions are illegal under Payment of Wages Act. If salary is deducted wrongly: 1) Send written complaint to employer. 2) File complaint with Payment of Wages Authority. 3) Contact Labour Commissioner. 4) Helpline: 1800-11-4444."}
+      ]
+    },
+    "women_rights": {
+      "icon": "🛡️",
+      "keywords": ["domestic violence","dowry","harassment","divorce","maintenance","women","wife","husband","sexual harassment","posh","alimony","posh act","கொடுமை","பெண்","வரதட்சணை","விவாகரத்து","ஜீவனாம்சம்","துன்புறுத்தல்"],
+      "qa": [
+        {"q":"What protection do I have against domestic violence?","a":"The Protection of Women from Domestic Violence Act 2005 protects women from physical, emotional, sexual, and economic abuse. You can: 1) Call Women Helpline: 181 (24/7, free). 2) Contact a Protection Officer at your District office. 3) File a complaint at any police station. 4) Get a Protection Order from court within 3 days — this stops the abuser from entering your home. You can also apply for monetary relief and custody of children."},
+        {"q":"What are my rights in case of dowry harassment?","a":"Dowry harassment is a crime under Section 498A IPC (imprisonment up to 3 years) and the Dowry Prohibition Act. Steps: 1) File police complaint — it's a cognizable offence, police must register FIR. 2) Call All Women Police Station or Women Helpline: 181. 3) Collect evidence: messages, witnesses, medical records. 4) You can also file for divorce and claim maintenance simultaneously."},
+        {"q":"How do I file for divorce?","a":"For divorce: 1) Mutual consent divorce: both agree — takes 6-18 months under Section 13B Hindu Marriage Act. 2) Contested divorce: one party files — can take 2-5 years. Documents needed: marriage certificate, Aadhaar, photos. You are entitled to alimony/maintenance during and after divorce. File petition in Family Court. Free legal aid available at District Legal Services Authority — call 1516."},
+        {"q":"What is the law against workplace sexual harassment?","a":"The POSH Act (2013) protects women from workplace sexual harassment in all workplaces including homes and online. Every employer with 10+ employees must have an Internal Complaints Committee (ICC). Steps: 1) File written complaint with ICC within 3 months. 2) If no ICC exists, contact Local Complaints Committee at District Collector's office. 3) Employer cannot dismiss you for filing complaint. Penalty for non-compliance: ₹50,000 fine for employer."},
+        {"q":"What maintenance am I entitled to after separation?","a":"Under Hindu Marriage Act, a wife is entitled to maintenance from husband. Interim maintenance can be ordered by court within days of filing. Final maintenance depends on: husband's income, wife's needs, standard of living. Section 125 CrPC: even divorced wife can claim maintenance if she cannot support herself. Apply in Family Court. Legal Aid available: DLSA helpline 1516."},
+        {"q":"What are property rights of women?","a":"Under Hindu Succession Act 2005: daughters have equal rights as sons in ancestral property. A married woman retains rights in her parents' property. Stridhan (gifts received at marriage) belongs entirely to the wife — husband has no right over it. In case of husband's death: wife is a Class I heir and gets equal share. For free legal advice: call 1516 or visit DLSA office."}
+      ]
+    },
+    "consumer_rights": {
+      "icon": "🛒",
+      "keywords": ["consumer","product","defective","refund","complaint","fraud","cheated","online","warranty","ecommerce","insurance","bank","hospital","நுகர்வோர்","பொருள்","புகார்","மோசடி","திரும்ப","உத்தரவாதம்"],
+      "qa": [
+        {"q":"What are my consumer rights in India?","a":"Under the Consumer Protection Act 2019, you have 6 rights: 1) Right to Safety — protection from hazardous goods. 2) Right to Information — honest product details. 3) Right to Choose — access to variety. 4) Right to be Heard — complaints must be addressed. 5) Right to Redressal — compensation for defective goods/services. 6) Right to Consumer Education. File complaints: consumerhelpline.gov.in or call 1915."},
+        {"q":"How do I file a consumer complaint?","a":"File consumer complaint: 1) Online at edaakhil.nic.in (easiest, free). 2) District Consumer Commission: claims up to ₹50 lakhs. 3) State Commission: ₹50 lakhs to ₹2 crores. 4) National Commission: above ₹2 crores. No lawyer needed for District Commission! Filing fee: ₹100-200 only. Case is typically resolved within 3-5 months. You can claim product cost + compensation + legal costs."},
+        {"q":"What to do if I received a defective product?","a":"For defective products: 1) Contact seller/brand immediately in writing (email/WhatsApp). 2) Keep all receipts, packaging, and evidence. 3) Take photos/videos of defect. 4) If unresolved in 30 days, file at Consumer Commission (edaakhil.nic.in). 5) You can claim: full refund OR replacement OR repair + compensation for mental harassment and expenses incurred."},
+        {"q":"What if I was cheated in online shopping?","a":"For online shopping fraud: 1) File cyber complaint at cybercrime.gov.in or call 1930 (Cyber Crime Helpline). 2) Report to e-commerce platform's grievance officer. 3) File consumer complaint at edaakhil.nic.in. 4) Contact your bank for chargeback within 45 days if paid by card. 5) Screenshot all communications as evidence. E-commerce platforms must resolve complaints within 48 hours."},
+        {"q":"What are my rights against a hospital for medical negligence?","a":"For medical negligence: 1) File complaint with State Medical Council. 2) File consumer case in Consumer Commission (medical services are included). 3) File criminal complaint under IPC if negligence caused death. 4) You can claim compensation for: treatment cost, loss of earnings, mental trauma. Limitation period: 2 years from date of negligence. Seek free legal help: DLSA 1516."},
+        {"q":"What can I do if bank charged wrong fees?","a":"For wrong bank charges: 1) File complaint with bank's grievance officer in writing. 2) If unresolved in 30 days, escalate to Banking Ombudsman (free, no lawyer needed) at bankingombudsman.rbi.org.in. 3) File consumer complaint at edaakhil.nic.in. 4) RBI Helpline: 14440. Banks must resolve complaints within 30 days or face penalty. You can claim refund + compensation."}
+      ]
+    },
+    "government_schemes": {
+      "icon": "🏛️",
+      "keywords": ["scheme","yojana","benefit","government","ration","pension","subsidy","application","bpl","apl","aadhaar","pm","chief minister","யோஜனா","திட்டம்","ஓய்வூதியம்","ரேஷன்","மானியம்","விண்ணப்பம்"],
+      "qa": [
+        {"q":"How do I apply for PM Awas Yojana housing scheme?","a":"PM Awas Yojana provides affordable housing for all. Eligibility: Annual income below ₹18 lakhs, no pucca house owned by family member. Apply: 1) Online at pmaymis.gov.in. 2) Visit Common Service Centre (CSC). 3) Through bank or housing finance company. Documents: Aadhaar, income certificate, bank passbook, photo. Subsidy: ₹1.5-2.67 lakhs credited directly to bank for home loan. Helpline: 1800-11-6163."},
+        {"q":"How do I get a ration card in Tamil Nadu?","a":"To get ration card in Tamil Nadu: 1) Apply online at tnpds.gov.in. 2) Visit nearest Ration Shop or Taluk Supply Office. Documents needed: Aadhaar card, address proof (electricity bill), family photos, income certificate. Cards issued within 30 days. For corrections/updates: visit district supply office. Ration card entitles you to subsidized rice (₹1/kg), dal, oil, sugar. Helpline: 1967."},
+        {"q":"What pension schemes are available for elderly?","a":"Elderly pension schemes: 1) Indira Gandhi National Old Age Pension: ₹200-500/month for BPL families above 60 years. 2) Tamil Nadu CM's Pension Scheme: ₹1000/month for above 60. 3) Widow Pension: ₹1000/month. Apply at local Panchayat/Municipality office. Documents: Aadhaar, age proof, bank account, income certificate. Pension credited directly to bank. Helpline: 1800-425-1213."},
+        {"q":"How do I apply for caste certificate?","a":"To get caste/community certificate: 1) Apply online at tnedistrict.gov.in. 2) Visit your Tahsildar office with: Aadhaar, school certificate showing community, parent's community certificate, address proof. Certificate issued within 7 working days. Permanent Community Certificate (PCC) is now issued — no need to renew. Needed for: education reservations, government jobs, scholarships. Helpline: 1800-425-1213."},
+        {"q":"What schemes are available for farmers?","a":"Key farmer schemes: 1) PM-KISAN: ₹6000/year directly to farmer's bank account — register at pmkisan.gov.in. 2) Crop Insurance (PMFBY): covers crop loss due to natural calamity. 3) Kisan Credit Card: easy loans at low interest. 4) Tamil Nadu Chief Minister's scheme: free electricity up to 100 units. Apply at nearest Agriculture office or Common Service Centre. Farmer helpline: 1551."},
+        {"q":"How do I apply for scholarship for education?","a":"Government scholarships available: 1) Post-Matric Scholarship for SC/ST/OBC: apply at scholarships.gov.in. 2) Tamil Nadu Government Scholarship: tbsche.net. 3) Central Sector Scholarship for college students: income below ₹4.5 lakhs. 4) Minority Scholarship: minorityaffairs.gov.in. Documents: Community certificate, income certificate, Aadhaar, mark sheets. Apply before October each year. Helpline: 1800-11-2001."}
+      ]
+    },
+    "criminal_law": {
+      "icon": "🚔",
+      "keywords": ["fir","police","arrest","bail","crime","theft","assault","court","murder","cheating","fraud","kidnap","blackmail","complaint","charge sheet","எஃப்ஐஆர்","போலீஸ்","கைது","ஜாமீன்","திருட்டு","கோர்ட்"],
+      "qa": [
+        {"q":"How do I file an FIR?","a":"To file an FIR: 1) Go to the nearest police station. 2) Give your complaint in writing or verbally. 3) Police MUST register FIR for cognizable offences — they legally CANNOT refuse. 4) Get a free copy of FIR — this is your right. 5) If police refuse: contact Superintendent of Police, file online at tncrime.tn.gov.in, or approach Magistrate under Section 156(3) CrPC. Keep FIR copy safely — it's essential for all legal proceedings."},
+        {"q":"What are my rights if I am arrested?","a":"If arrested, you have the legal right to: 1) Know the reason for arrest. 2) Inform a family member or friend immediately. 3) Consult a lawyer of your choice before police questioning. 4) Be produced before a Magistrate within 24 hours. 5) Receive free legal aid if you cannot afford a lawyer. 6) Not be tortured or ill-treated — this is punishable. Do NOT sign any documents without understanding them. Stay calm and ask for a lawyer immediately."},
+        {"q":"How do I get bail?","a":"For bail: 1) Bailable offence → bail is your RIGHT — apply directly at police station. 2) Non-bailable offence → apply in court through a lawyer. 3) A lawyer files a bail application in Sessions Court or High Court. 4) Free legal aid available at District Legal Services Authority — call 1516. 5) Anticipatory bail can be obtained BEFORE arrest if you fear arrest. Bail amount depends on the offence and court's discretion."},
+        {"q":"What to do if I am a victim of theft?","a":"If robbed or items stolen: 1) File FIR at nearest police station immediately — don't delay. 2) Note all stolen items with approximate value and serial numbers (for electronics). 3) Preserve evidence: CCTV footage, witnesses, call records. 4) For online fraud/theft: also report at cybercrime.gov.in or call 1930. 5) For mobile theft: block SIM immediately (call operator), report IMEI at ceir.gov.in. Police must file charge sheet within 60-90 days."},
+        {"q":"What is the process for filing a cheating case?","a":"For cheating/fraud cases (Section 420 IPC): 1) File FIR at nearest police station with all evidence (documents, messages, receipts). 2) Cheating is a cognizable offence — police must register FIR. 3) For online fraud: file at cybercrime.gov.in or call 1930 in addition to police FIR. 4) You can also file a private complaint before a Magistrate. 5) Keep all evidence carefully — digital evidence (screenshots, emails) is admissible in court."},
+        {"q":"What are my rights during police questioning?","a":"During police questioning: 1) You cannot be detained without arrest for more than 24 hours. 2) You have the right to remain silent — you need not answer questions that incriminate you (Article 20(3) Constitution). 3) A lawyer must be allowed to be present. 4) Police cannot use force or torture during questioning — this is a criminal offence. 5) If detained illegally, you or your family can file a Habeas Corpus petition in High Court. Legal Aid: 1516."}
+      ]
+    },
+    "family_law": {
+      "icon": "👨‍👩‍👧",
+      "keywords": ["marriage","inheritance","will","property","child","custody","adoption","family","divorce","heir","guardian","succession","திருமணம்","குழந்தை","வாரிசு","தத்தெடுத்தல்","பாதுகாப்பாளர்","உயில்"],
+      "qa": [
+        {"q":"What are my inheritance rights?","a":"Under the Hindu Succession Act (amended 2005): daughters have EQUAL rights as sons in ancestral property. For self-acquired property, the owner decides through a Will. Without a Will, property is divided equally among Class I heirs (spouse, children, mother). Register a Will at Sub-Registrar office to avoid future disputes — it costs only ₹200-500. For free legal advice on inheritance: DLSA helpline 1516."},
+        {"q":"What are the legal requirements for marriage?","a":"Legal requirements for Hindu marriage: 1) Minimum age: 21 for groom, 18 for bride (below is illegal). 2) Register marriage at Sub-Registrar office within 90 days — bring 2 witnesses + marriage invitation + Aadhaar. 3) Marriage registration is mandatory and FREE in Tamil Nadu. 4) Registered marriage protects legal rights in divorce, property, and insurance claims. Special Marriage Act allows interfaith marriages."},
+        {"q":"How is child custody decided after divorce?","a":"Child custody is decided based on the child's best interest. Courts consider: child's age (mother preferred for children below 5 years), financial stability of each parent, emotional bond, and child's wishes (if above 9 years). Father must pay child maintenance regardless of custody. Both parents have visitation rights even if one has custody. Apply in Family Court — free legal aid available at DLSA (1516)."},
+        {"q":"How do I write a legal Will?","a":"To write a valid Will: 1) Must be in writing (typed or handwritten). 2) Must clearly state who gets what property. 3) Signed by testator (Will maker) in presence of 2 witnesses. 4) Witnesses must sign the Will (they should not be beneficiaries). 5) Registration at Sub-Registrar office (recommended — costs ₹200-500) — registered Will is very difficult to challenge. A lawyer is not mandatory but recommended for complex property."},
+        {"q":"How do I adopt a child legally in India?","a":"Legal adoption process in India (CARA): 1) Register on carings.nic.in (Central Adoption Resource Authority). 2) Submit documents: Aadhaar, income proof, medical certificate, marriage certificate. 3) Home study report by social worker. 4) Wait for a child to be matched. 5) Court finalizes adoption. Time: 1-3 years typically. Inter-country adoption has additional requirements. Consult DLSA for free guidance: 1516."},
+        {"q":"What happens to property if a person dies without a Will?","a":"If someone dies without a Will (intestate), property is distributed under personal law: For Hindus: Class I heirs (spouse, children, mother) get equal shares. For Muslims: governed by Muslim Personal Law — different shares for male and female heirs. For Christians: Indian Succession Act applies — spouse gets 1/3, children get 2/3. To claim inheritance: obtain a Legal Heir Certificate from Tahsildar office with Aadhaar and death certificate."}
+      ]
+    },
+    "rtis": {
+      "icon": "📋",
+      "keywords": ["rti","right to information","government information","public authority","information","தகவல் உரிமை","ஆர்டிஐ","அரசு தகவல்"],
+      "qa": [
+        {"q":"What is RTI and how to file it?","a":"Right to Information Act 2005 gives every citizen the right to get information from government offices. How to file: 1) Write a simple letter/application to Public Information Officer (PIO) of the concerned department. 2) Pay ₹10 application fee (BPL card holders exempt). 3) Online RTI at rtionline.gov.in. 4) Information must be provided within 30 days (48 hours for life/liberty matters). 5) If denied, appeal to Appellate Authority, then State Information Commission."},
+        {"q":"What information can I get through RTI?","a":"Through RTI you can get: government decisions, files, contracts, policy documents, budget details, tender information, inspection reports, government scheme beneficiary lists, corruption-related information, court records, and any information held by public authorities. You CANNOT get: Cabinet proceedings, information that would harm national security, personal information of third parties, or information protected by other laws. RTI is free for BPL card holders."}
+      ]
+    },
+    "cyber_law": {
+      "icon": "💻",
+      "keywords": ["cyber","online fraud","hacking","social media","data","privacy","whatsapp","password","scam","identity theft","சைபர்","ஆன்லைன் மோசடி","ஹேக்கிங்","தனியுரிமை"],
+      "qa": [
+        {"q":"What to do if I am a victim of cyber fraud?","a":"For cyber fraud: 1) Call Cyber Crime Helpline: 1930 IMMEDIATELY (golden hour — first few hours). 2) File complaint at cybercrime.gov.in. 3) Also file FIR at nearest police station (Cyber Crime Cell). 4) Contact your bank immediately to freeze/block the transaction. 5) Preserve all evidence: screenshots, call recordings, emails. Time is critical — faster you report, more chances of getting money back. Do not share OTP/password with anyone."},
+        {"q":"Is sharing someone's private photos without consent a crime?","a":"Yes! Sharing private/intimate photos without consent is a criminal offence under IT Act Section 66E (privacy violation — punishment: 3 years imprisonment + fine) and Section 354C IPC (voyeurism). Steps: 1) File complaint at cybercrime.gov.in or call 1930. 2) Report content to the platform for immediate removal. 3) File FIR with Cyber Crime Cell. 4) Court can order immediate takedown. This includes morphed photos and videos. For immediate help: Women Helpline 181."},
+        {"q":"What to do if my social media account is hacked?","a":"If account is hacked: 1) Immediately change password of linked email from another device. 2) Enable two-factor authentication. 3) Report to the platform (Facebook/Instagram/WhatsApp) through their security settings. 4) Inform friends that account is hacked. 5) File complaint at cybercrime.gov.in if used for fraud. 6) File FIR at local police Cyber Crime Cell. Keep record of all suspicious activity. Cyber helpline: 1930."}
+      ]
+    },
+    "education_rights": {
+      "icon": "📚",
+      "keywords": ["education","school","rte","college","student","admission","fee","scholarship","discrimination","கல்வி","பள்ளி","கல்லூரி","மாணவர்","சேர்க்கை","கட்டணம்"],
+      "qa": [
+        {"q":"What are my rights under Right to Education Act?","a":"Right to Education (RTE) Act 2009 guarantees: 1) Free and compulsory education for children aged 6-14 years. 2) 25% reservation in private schools for economically weaker sections (EWS) — completely FREE. 3) No child can be expelled or detained till Class 8. 4) Schools cannot charge capitation fees — this is illegal. 5) Schools must have proper infrastructure. File complaints at State Education Department. Helpline: 1800-111-265."},
+        {"q":"What to do if college charges excess fees?","a":"If college charges unauthorized fees: 1) File complaint with State Fee Determination Committee (Tamil Nadu: Anna University for engineering colleges). 2) File RTI to get fee structure approved by government. 3) File consumer complaint at Consumer Commission — education is a service under Consumer Protection Act. 4) Anti-ragging helpline (if ragging): 1800-180-5522. All fees must be as per government approved structure. Receipts must be issued for all payments."}
+      ]
+    }
+  },
+  "emergency_contacts": {
+    "Police": "100",
+    "Women Helpline": "181",
+    "Child Helpline": "1098",
+    "Legal Aid": "1516",
+    "Cyber Crime": "1930",
+    "Consumer Helpline": "1915",
+    "Labour Helpline": "1800-11-4444",
+    "Farmer Helpline": "1551",
+    "Senior Citizen": "14567",
+    "Ambulance": "108",
+    "Fire": "101",
+    "TN Govt Helpline": "1800-425-1213",
+    "Anti-Corruption": "1064",
+    "RBI Banking": "14440"
+  },
+  "general": {
+    "greeting_en": "Welcome to Electro Spark Legal Assistant! 🙏\n\nI can help you with legal questions in your language. Choose a topic or ask your question directly.",
+    "greeting_ta": "Electro Spark சட்ட உதவியாளருக்கு வருக! 🙏\n\nநான் உங்கள் மொழியில் சட்ட கேள்விகளுக்கு உதவ முடியும். ஒரு தலைப்பை தேர்ந்தெடுக்கவும் அல்லது நேரடியாக கேளுங்கள்.",
+    "not_found_en": "I couldn't find specific information for your query. Please try rephrasing or contact free legal aid at helpline 1516.",
+    "not_found_ta": "உங்கள் கேள்விக்கான குறிப்பிட்ட தகவல் கிடைக்கவில்லை. மீண்டும் முயற்சிக்கவும் அல்லது இலவச சட்ட உதவிக்கு 1516 அழைக்கவும்."
+  }
+}
